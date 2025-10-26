@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 25% 8%;
+    --primary-glow: 195 100% 65%;
+
+    --secondary: 220 18% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 18% 16%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 195 95% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 25% 8%;
+
+    --border: 220 18% 20%;
+    --input: 220 18% 18%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(195 100% 65%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 25% 8%), hsl(220 25% 6%));
+    --gradient-card: linear-gradient(135deg, hsl(220 20% 12%), hsl(220 18% 14%));
+    
+    --shadow-glow: 0 0 40px hsl(195 100% 50% / 0.15);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
